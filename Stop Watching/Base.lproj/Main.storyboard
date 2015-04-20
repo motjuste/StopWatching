@@ -41,8 +41,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RYI-wg-Rsq">
+                                <rect key="frame" x="0.0" y="224" width="600" height="376"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="icz-4r-viW"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="WaT-Lo-Oy0"/>
+                                </connections>
+                            </tableView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crr-Ue-0Fc">
-                                <rect key="frame" x="376" y="260" width="80" height="80"/>
+                                <rect key="frame" x="376" y="372" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="nYz-wh-kMR"/>
                                     <constraint firstAttribute="width" constant="80" id="sO5-0t-hbw"/>
@@ -54,35 +62,35 @@
                                     <action selector="stopreset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="M1a-mu-6vL"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RYI-wg-Rsq">
-                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="icz-4r-viW"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="WaT-Lo-Oy0"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="RYI-wg-Rsq" secondAttribute="centerX" id="5G1-XE-pu0"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="crr-Ue-0Fc" secondAttribute="bottom" constant="260" id="9iu-lB-gIE"/>
                             <constraint firstAttribute="trailing" secondItem="RYI-wg-Rsq" secondAttribute="trailing" id="9oa-fC-zih"/>
+                            <constraint firstItem="hVG-JT-JVY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="14" id="IP5-lt-ZbU"/>
                             <constraint firstItem="RYI-wg-Rsq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PPu-U0-yQe"/>
+                            <constraint firstItem="RYI-wg-Rsq" firstAttribute="top" secondItem="Qn0-NK-uJ9" secondAttribute="bottom" id="Ppy-SR-5Hz"/>
                             <constraint firstAttribute="trailing" secondItem="Qn0-NK-uJ9" secondAttribute="trailing" id="WrI-tn-y5D"/>
                             <constraint firstItem="Qn0-NK-uJ9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZNu-EP-0ke"/>
                             <constraint firstAttribute="centerY" secondItem="crr-Ue-0Fc" secondAttribute="centerY" id="acz-v6-t92"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="RYI-wg-Rsq" secondAttribute="bottom" id="ciK-ai-oH1"/>
+                            <constraint firstItem="Qn0-NK-uJ9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="cvu-gS-j1B"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="crr-Ue-0Fc" secondAttribute="bottom" constant="17" id="fqa-zT-IUF"/>
                             <constraint firstItem="RYI-wg-Rsq" firstAttribute="top" secondItem="crr-Ue-0Fc" secondAttribute="bottom" constant="60" id="jre-jT-y7Q"/>
                             <constraint firstItem="Qn0-NK-uJ9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="keZ-y0-g1n"/>
                             <constraint firstItem="crr-Ue-0Fc" firstAttribute="trailing" secondItem="hVG-JT-JVY" secondAttribute="trailing" id="kgu-NX-IiU"/>
-                            <constraint firstItem="hVG-JT-JVY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="14" id="oyp-XR-vJn"/>
                             <constraint firstAttribute="centerX" secondItem="hVG-JT-JVY" secondAttribute="leading" constant="-42" id="ta2-8Y-oyT"/>
+                            <constraint firstItem="RYI-wg-Rsq" firstAttribute="centerY" secondItem="crr-Ue-0Fc" secondAttribute="centerY" id="uyb-2A-IDL"/>
+                            <constraint firstItem="RYI-wg-Rsq" firstAttribute="trailing" secondItem="crr-Ue-0Fc" secondAttribute="leading" id="z9Y-TF-FOV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="9iu-lB-gIE"/>
+                                <exclude reference="5G1-XE-pu0"/>
+                                <exclude reference="jre-jT-y7Q"/>
+                                <exclude reference="z9Y-TF-FOV"/>
+                                <exclude reference="fqa-zT-IUF"/>
+                                <exclude reference="acz-v6-t92"/>
                             </mask>
                         </variation>
                         <connections>
@@ -91,10 +99,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Stop Watching" id="grm-q6-sTB"/>
                     <connections>
-                        <outlet property="currentUILabel" destination="Qn0-NK-uJ9" id="eFd-mQ-aWa"/>
+                        <outlet property="currentUILabel" destination="hVG-JT-JVY" id="HfL-Kq-VN8"/>
                         <outlet property="lapsTableView" destination="RYI-wg-Rsq" id="sBg-Y7-X5v"/>
                         <outlet property="stopresetButton" destination="crr-Ue-0Fc" id="jjM-Mo-RF2"/>
-                        <outlet property="totalUILabel" destination="hVG-JT-JVY" id="1vK-Gb-Uhm"/>
+                        <outlet property="totalUILabel" destination="Qn0-NK-uJ9" id="dWJ-7V-c0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -104,7 +112,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="534" y="1179"/>
+            <point key="canvasLocation" x="572" y="1211"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="08d-eQ-PA5">
