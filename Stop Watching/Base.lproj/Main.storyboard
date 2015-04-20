@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jl5-J9-fd0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Stop Watching-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Stop_Watching" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,116 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <userGuides>
+                            <userLayoutGuide location="458" affinity="minX"/>
+                            <userLayoutGuide location="223" affinity="minY"/>
+                        </userGuides>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn0-NK-uJ9">
+                                <rect key="frame" x="0.0" y="64" width="600" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="FFV-Me-eDA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="80"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00,00" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVG-JT-JVY">
+                                <rect key="frame" x="342" y="78" width="114" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="AT7-wN-III"/>
+                                    <constraint firstAttribute="width" constant="114" id="e4I-x0-nnc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crr-Ue-0Fc">
+                                <rect key="frame" x="376" y="260" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="nYz-wh-kMR"/>
+                                    <constraint firstAttribute="width" constant="80" id="sO5-0t-hbw"/>
+                                </constraints>
+                                <state key="normal" image="Stop.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopreset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="M1a-mu-6vL"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RYI-wg-Rsq">
+                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="icz-4r-viW"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="WaT-Lo-Oy0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="RYI-wg-Rsq" secondAttribute="centerX" id="5G1-XE-pu0"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="crr-Ue-0Fc" secondAttribute="bottom" constant="260" id="9iu-lB-gIE"/>
+                            <constraint firstAttribute="trailing" secondItem="RYI-wg-Rsq" secondAttribute="trailing" id="9oa-fC-zih"/>
+                            <constraint firstItem="RYI-wg-Rsq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PPu-U0-yQe"/>
+                            <constraint firstAttribute="trailing" secondItem="Qn0-NK-uJ9" secondAttribute="trailing" id="WrI-tn-y5D"/>
+                            <constraint firstItem="Qn0-NK-uJ9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZNu-EP-0ke"/>
+                            <constraint firstAttribute="centerY" secondItem="crr-Ue-0Fc" secondAttribute="centerY" id="acz-v6-t92"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="RYI-wg-Rsq" secondAttribute="bottom" id="ciK-ai-oH1"/>
+                            <constraint firstItem="RYI-wg-Rsq" firstAttribute="top" secondItem="crr-Ue-0Fc" secondAttribute="bottom" constant="60" id="jre-jT-y7Q"/>
+                            <constraint firstItem="Qn0-NK-uJ9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="keZ-y0-g1n"/>
+                            <constraint firstItem="crr-Ue-0Fc" firstAttribute="trailing" secondItem="hVG-JT-JVY" secondAttribute="trailing" id="kgu-NX-IiU"/>
+                            <constraint firstItem="hVG-JT-JVY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="14" id="oyp-XR-vJn"/>
+                            <constraint firstAttribute="centerX" secondItem="hVG-JT-JVY" secondAttribute="leading" constant="-42" id="ta2-8Y-oyT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9iu-lB-gIE"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0lF-AA-lch" appends="YES" id="tYn-en-5Tg"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Stop Watching" id="grm-q6-sTB"/>
+                    <connections>
+                        <outlet property="currentUILabel" destination="Qn0-NK-uJ9" id="eFd-mQ-aWa"/>
+                        <outlet property="lapsTableView" destination="RYI-wg-Rsq" id="sBg-Y7-X5v"/>
+                        <outlet property="stopresetButton" destination="crr-Ue-0Fc" id="jjM-Mo-RF2"/>
+                        <outlet property="totalUILabel" destination="hVG-JT-JVY" id="1vK-Gb-Uhm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0lF-AA-lch">
+                    <connections>
+                        <action selector="screenTap:" destination="vXZ-lx-hvc" id="5nm-1f-6CZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="534" y="1179"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="08d-eQ-PA5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jl5-J9-fd0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ne8-Yy-3ue">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="dlK-od-eMR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGw-fo-9cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521" y="329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Stop.png" width="124" height="124"/>
+    </resources>
 </document>
