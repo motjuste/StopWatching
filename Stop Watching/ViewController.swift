@@ -108,7 +108,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.textColor = UIColor.blackColor()
         cell.textLabel?.textAlignment = NSTextAlignment.Left
         cell.detailTextLabel?.text = laps[indexPath.row]
-        cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 29)
+        cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-UltraLight", size: 29)
         
         return cell
         
