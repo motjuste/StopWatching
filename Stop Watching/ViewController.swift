@@ -41,8 +41,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if resetEnabled {
                 resetEnabled = false
-                stopresetButton.setImage(UIImage(named: "stop.png"), forState: .Normal)
-                
                 lapsTableView.scrollToRowAtIndexPath(NSIndexPath (forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
                 lapsTableView.scrollEnabled = false
             }
@@ -102,13 +100,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Table View Methods
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
+        var cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: "Cell")
         
         cell.backgroundColor = self.view.backgroundColor
         cell.textLabel?.text = "Lap \(laps.count - indexPath.row)"
-        cell.textLabel?.font = UIFont(name: "Helvtica Neu Thin", size: 29)
+        cell.textLabel?.font = UIFont(name: "HelvticaNeue-Thin", size: 29)
+        cell.textLabel?.textColor = UIColor.blackColor()
+        cell.textLabel?.textAlignment = NSTextAlignment.Left
         cell.detailTextLabel?.text = laps[indexPath.row]
-        cell.detailTextLabel?.font = totalUILabel.font
+        cell.detailTextLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 29)
         
         return cell
         
