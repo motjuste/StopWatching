@@ -55,12 +55,18 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crr-Ue-0Fc">
                                 <rect key="frame" x="376" y="372" width="80" height="80"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="9EA-UT-QdJ"/>
                                     <constraint firstAttribute="height" constant="80" id="nYz-wh-kMR"/>
-                                    <constraint firstAttribute="width" constant="80" id="sO5-0t-hbw"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="sO5-0t-hbw"/>
                                 </constraints>
                                 <state key="normal" image="Stop.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nYz-wh-kMR"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="stopreset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="M1a-mu-6vL"/>
                                 </connections>
