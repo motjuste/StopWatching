@@ -44,6 +44,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RYI-wg-Rsq">
                                 <rect key="frame" x="0.0" y="224" width="600" height="376"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="TqH-kN-Tqa"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="icz-4r-viW"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="WaT-Lo-Oy0"/>
@@ -68,29 +71,39 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="RYI-wg-Rsq" secondAttribute="centerX" id="5G1-XE-pu0"/>
                             <constraint firstAttribute="trailing" secondItem="RYI-wg-Rsq" secondAttribute="trailing" id="9oa-fC-zih"/>
+                            <constraint firstItem="RYI-wg-Rsq" firstAttribute="top" secondItem="Qn0-NK-uJ9" secondAttribute="bottom" id="AFE-7H-nRq"/>
                             <constraint firstItem="hVG-JT-JVY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="14" id="IP5-lt-ZbU"/>
-                            <constraint firstItem="RYI-wg-Rsq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PPu-U0-yQe"/>
+                            <constraint firstItem="RYI-wg-Rsq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" priority="900" id="PPu-U0-yQe"/>
                             <constraint firstItem="RYI-wg-Rsq" firstAttribute="top" secondItem="Qn0-NK-uJ9" secondAttribute="bottom" id="Ppy-SR-5Hz"/>
+                            <constraint firstItem="Qn0-NK-uJ9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="SHE-fS-hla"/>
                             <constraint firstAttribute="trailing" secondItem="Qn0-NK-uJ9" secondAttribute="trailing" id="WrI-tn-y5D"/>
                             <constraint firstItem="Qn0-NK-uJ9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZNu-EP-0ke"/>
                             <constraint firstAttribute="centerY" secondItem="crr-Ue-0Fc" secondAttribute="centerY" id="acz-v6-t92"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="RYI-wg-Rsq" secondAttribute="bottom" id="ciK-ai-oH1"/>
                             <constraint firstItem="Qn0-NK-uJ9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="cvu-gS-j1B"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" relation="lessThanOrEqual" secondItem="crr-Ue-0Fc" secondAttribute="bottom" constant="200" id="dc8-5S-zKE"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="crr-Ue-0Fc" secondAttribute="bottom" constant="17" id="fqa-zT-IUF"/>
+                            <constraint firstItem="crr-Ue-0Fc" firstAttribute="centerY" secondItem="RYI-wg-Rsq" secondAttribute="centerY" priority="900" id="gOf-F4-n5g"/>
                             <constraint firstItem="RYI-wg-Rsq" firstAttribute="top" secondItem="crr-Ue-0Fc" secondAttribute="bottom" constant="60" id="jre-jT-y7Q"/>
+                            <constraint firstAttribute="trailing" secondItem="Qn0-NK-uJ9" secondAttribute="trailing" id="kC8-Zh-1WX"/>
                             <constraint firstItem="Qn0-NK-uJ9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="keZ-y0-g1n"/>
                             <constraint firstItem="crr-Ue-0Fc" firstAttribute="trailing" secondItem="hVG-JT-JVY" secondAttribute="trailing" id="kgu-NX-IiU"/>
+                            <constraint firstAttribute="centerX" secondItem="hVG-JT-JVY" secondAttribute="leading" constant="-42" id="nit-ZR-ovn"/>
                             <constraint firstAttribute="centerX" secondItem="hVG-JT-JVY" secondAttribute="leading" constant="-42" id="ta2-8Y-oyT"/>
                             <constraint firstItem="RYI-wg-Rsq" firstAttribute="centerY" secondItem="crr-Ue-0Fc" secondAttribute="centerY" id="uyb-2A-IDL"/>
                             <constraint firstItem="RYI-wg-Rsq" firstAttribute="trailing" secondItem="crr-Ue-0Fc" secondAttribute="leading" id="z9Y-TF-FOV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="WrI-tn-y5D"/>
+                                <exclude reference="ZNu-EP-0ke"/>
                                 <exclude reference="5G1-XE-pu0"/>
                                 <exclude reference="jre-jT-y7Q"/>
+                                <exclude reference="uyb-2A-IDL"/>
                                 <exclude reference="z9Y-TF-FOV"/>
-                                <exclude reference="fqa-zT-IUF"/>
+                                <exclude reference="ta2-8Y-oyT"/>
                                 <exclude reference="acz-v6-t92"/>
+                                <exclude reference="fqa-zT-IUF"/>
                             </mask>
                         </variation>
                         <connections>
@@ -112,7 +125,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="572" y="1211"/>
+            <point key="canvasLocation" x="521" y="1215"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="08d-eQ-PA5">
