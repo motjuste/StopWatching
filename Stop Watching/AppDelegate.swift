@@ -22,17 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        if let stopwatchValues = defaults.dictionaryForKey("stopwatchValues") as? [String: [Int]] {
-            let currentWatchValuesArray = stopwatchValues["currentWatchValues"]
-            let totalWatchValuesArray = stopwatchValues["totalWatchValues"]
-            
-            let currentWatchValues = WatchValues(fractions: currentWatchValuesArray![0], seconds: currentWatchValuesArray![1], minutes: currentWatchValuesArray![2])
-            let totalWatchValues = WatchValues(fractions: totalWatchValuesArray![0], seconds: totalWatchValuesArray![1], minutes: totalWatchValuesArray![2])
-            
-            currentWatch = Watch(watchValues: currentWatchValues)
-            totalWatch = Watch(watchValues: totalWatchValues)
-            
-        }
+//        if let stopwatchValues = defaults.dictionaryForKey("stopwatchValues") as? [String: [Int]] {
+//            let currentWatchValuesArray = stopwatchValues["currentWatchValues"]
+//            let totalWatchValuesArray = stopwatchValues["totalWatchValues"]
+//            
+//            let currentWatchValues = WatchValues(fractions: currentWatchValuesArray![0], seconds: currentWatchValuesArray![1], minutes: currentWatchValuesArray![2])
+//            let totalWatchValues = WatchValues(fractions: totalWatchValuesArray![0], seconds: totalWatchValuesArray![1], minutes: totalWatchValuesArray![2])
+//            
+//            currentWatch = Watch(watchValues: currentWatchValues)
+//            totalWatch = Watch(watchValues: totalWatchValues)
+//            
+//        }
         resetEnabled = defaults.boolForKey("resetEnabled")
         if let defaultLaps = defaults.arrayForKey("laps") as? [String] {
             laps = defaultLaps
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let stopwatchValues: [String: [Int]] = ["currentWatchvalues": [currentWatch.values.fractions, currentWatch.values.seconds, currentWatch.values.minutes], "totalWatchValues": [totalWatch.values.fractions, totalWatch.values.seconds, totalWatch.values.minutes]]
         
         defaults.setBool(resetEnabled, forKey: "resetEnabled")
-        defaults.setObject(stopwatchValues as [String: [Int]], forKey: "stopwatchValues")
+//        defaults.setObject(stopwatchValues as [String: [Int]], forKey: "stopwatchValues")
         defaults.setObject(laps as [String], forKey: "laps")
     }
 
